@@ -2,22 +2,21 @@ name: Daily Counterpoint Tracker
 
 on:
   schedule:
-    # Runs everyday at 09:00 AM UTC (2:30 PM IST)
     - cron: '0 9 * * *'
-  workflow_dispatch: # Allows you to test it manually via the GitHub interface button
+  workflow_dispatch:
 
 jobs:
   track-and-notify:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # Crucial permission allowing GitHub to commit memory back to code
+      contents: write
 
     steps:
     - name: Checkout Code
       uses: actions/checkout@v4
 
     - name: Set up Python
-      uses: actions/checkout@v4
+      uses: actions/setup-python@v5
       with:
         python-version: '3.10'
 
@@ -28,18 +27,18 @@ jobs:
 
     - name: Run Scraper Script
       env:
-        CALLMEBOT_API_KEY: ${{ secrets.CALLMEBOT_API_KEY }}
+        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
       run: python script.py
 
-    - name: Commit State Back to Repo (Memory Management)
+    - name: Commit Memory State Updates Back to Repo
       run: |
-        # If script flags that it found a new link, save it to the master code line
         if [ -f sync_status.txt ] && grep -q "update_committed" sync_status.txt; then
           git config --global user.name "GitHub Automation Bot"
           git config --global user.email "actions@github.com"
-          git add last_link.txt
-          git commit -m "Automated Sync: Updated last processed blog link"
+          git add processed_links.txt
+          git commit -m "Automated Sync: Memory state update"
           git push
         else
-          echo "No new updates found. Skipping repository commit state change."
+          echo "No new historical deliveries tracked. Aborting commit sync."
         fi
