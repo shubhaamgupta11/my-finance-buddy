@@ -11,8 +11,16 @@ API_KEY = os.getenv("CALLMEBOT_API_KEY")
 
 def fetch_latest_blog():
     print(f"Scraping {TARGET_URL}...")
-    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
-    response = requests.get(TARGET_URL, headers=headers)
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "Accept-Language": "en-US,en;q=0.9"
+    }
+    
+    try:
+        response = requests.get(TARGET_URL, headers=headers, timeout=15)
+    except Exception as e:
+        print(f"Network error trying to fetch page: {e}")
+        return None, None
     
     if response.status_code != 200:
         print(f"Failed to load page. Status code: {response.status_code}")
@@ -20,17 +28,23 @@ def fetch_latest_blog():
         
     soup = BeautifulSoup(response.text, 'html.parser')
     
-    # Counterpoint list contains blog anchors inside h3 tags
-    blog_headers = soup.find_all('h3')
+    # Broad scan for any links containing /insights/ to capture the feed dynamically
+    all_links = soup.find_all('a', href=True)
     
-    for header in blog_headers:
-        link_tag = header.find('a')
-        if link_tag and link_tag.get('href'):
-            title = link_tag.text.strip()
-            link = link_tag['href'].strip()
-            # Ensure it is a complete URL path
+    for tag in all_links:
+        link = tag['href'].strip()
+        title = tag.text.strip()
+        
+        # Filter out master list links, category pages, images, and empty texts
+        if "/en/insights/" in link and len(title) > 25:
+            # Skip the main hub URL itself
+            if link.endswith('/en/insights') or link.endswith('/en/insights/'):
+                continue
+                
+            # Ensure it forms a complete URL path
             if not link.startswith('http'):
                 link = "https://counterpointresearch.com" + link
+                
             return title, link
             
     return None, None
@@ -38,21 +52,24 @@ def fetch_latest_blog():
 def send_whatsapp(title, url):
     # Constructing your specific text request
     message = f"Hey Shobhit, Checkout new blogs posted today on counter resarch point. Here is the link to it:\n\n{url}"
-    print(f"Sending WhatsApp Alert: {message}")
+    print(f"Sending WhatsApp Alert for: '{title}'")
     
     # CallMeBot Endpoint
-    api_url = "https://api.callmebot.com/whatsapp.php"
+    api_url = "https://callmebot.com"
     params = {
         "phone": PHONE_NUMBER,
         "text": message,
         "apikey": API_KEY
     }
     
-    res = requests.get(api_url, params=params)
-    if res.status_code == 200:
-        print("Notification delivered successfully.")
-    else:
-        print(f"Failed to notify CallMeBot. Status: {res.status_code}")
+    try:
+        res = requests.get(api_url, params=params, timeout=10)
+        if res.status_code == 200:
+            print("Notification delivered successfully via CallMeBot.")
+        else:
+            print(f"Failed to notify CallMeBot. Status: {res.status_code}, Response: {res.text}")
+    except Exception as e:
+        print(f"Error connecting to CallMeBot API: {e}")
 
 def main():
     if not API_KEY:
@@ -62,10 +79,10 @@ def main():
     # 1. Fetch current top blog post
     latest_title, latest_link = fetch_latest_blog()
     if not latest_link:
-        print("Could not isolate any blog URLs on the page.")
+        print("Could not isolate any valid blog URLs on the page layout.")
         return
         
-    print(f"Latest on site: {latest_title} ({latest_link})")
+    print(f"Latest on site identified: '{latest_title}' \nURL: {latest_link}")
 
     # 2. Check Memory File
     last_processed_link = ""
@@ -75,12 +92,11 @@ def main():
 
     # 3. Decision Stateful Logic
     if latest_link == last_processed_link:
-        print("State Check: No new blogs detected since the last run. Exiting.")
-        # Writing "no_update" tells the YAML file to halt without tracking commits
+        print("State Check: No new blogs detected since last run. Exiting.")
         with open("sync_status.txt", "w") as status:
             status.write("no_update")
     else:
-        print("State Check: Found a brand-new update!")
+        print("State Check: New blog update discovered!")
         # Trigger WhatsApp notification
         send_whatsapp(latest_title, latest_link)
         
