@@ -1,11 +1,26 @@
+"""
+Blog tracker for Counterpoint Research insights.
+
+Designed to be source-agnostic: add a new website by subclassing ``BlogSource``,
+overriding ``extract_cards`` (and optionally ``build_message``), and appending it
+to ``SOURCES`` at the bottom of this file. No other changes required.
+
+Persistence uses a single source of truth: ``processed_links.txt`` (one URL per
+line). An empty/missing file means "first run, nothing sent before", in which case
+every post published *today* is sent.
+"""
+
 import os
 import re
 import sys
 import time
-import logging
 import html as html_lib
-from datetime import datetime, timezone
+import logging
+from dataclasses import dataclass
+from datetime import datetime, date, timezone
+from typing import List, Optional
 from urllib.parse import urljoin
+from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
 import requests
 from bs4 import BeautifulSoup
@@ -13,17 +28,15 @@ from bs4 import BeautifulSoup
 # ---------------------------------------------------------------------------
 # Configuration
 # ---------------------------------------------------------------------------
-TARGET_URL = "https://counterpointresearch.com/en/insights"
-BASE_URL = "https://counterpointresearch.com"
 MEMORY_FILE = "processed_links.txt"
-SEED_FILE = "last_link.txt"
-STATUS_FILE = "sync_status.txt"
 LOG_FILE = "tracker.log"
-MAX_NOTIFY_PER_RUN = 10
-
-INSIGHT_LINK_RE = re.compile(r"^/en/insights/[a-z0-9-]+/?$")
+TELEGRAM_API_URL = "https://api.telegram.org/bot{token}/sendMessage"
+REQUEST_TIMEOUT = 20
+TELEGRAM_TIMEOUT = 15
+TELEGRAM_MAX_RETRIES = 3
 REQUEST_HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36",
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                  "(KHTML, like Gecko) Chrome/124.0 Safari/537.36",
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
     "Accept-Language": "en-US,en;q=0.9",
 }
@@ -35,11 +48,34 @@ LOG_FORMAT = "%(asctime)s [%(levelname)s] %(message)s"
 LOG_DATEFMT = "%Y-%m-%d %H:%M:%S"
 
 
-def _load_env_file(path=".env"):
-    """Load KEY=VALUE pairs from a local .env file (for local runs only).
+def setup_logging():
+    logger = logging.getLogger("tracker")
+    logger.setLevel(logging.DEBUG)
+    logger.handlers.clear()
 
-    GitHub Actions supplies TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID via secrets,
-    so .env is purely an optional convenience for running the script locally.
+    formatter = logging.Formatter(LOG_FORMAT, datefmt=LOG_DATEFMT)
+
+    console = logging.StreamHandler(sys.stdout)
+    console.setLevel(logging.DEBUG)
+    console.setFormatter(formatter)
+    logger.addHandler(console)
+
+    file_handler = logging.FileHandler(LOG_FILE, encoding="utf-8")
+    file_handler.setLevel(logging.DEBUG)
+    file_handler.setFormatter(formatter)
+    logger.addHandler(file_handler)
+
+    return logger
+
+
+log = setup_logging()
+
+
+def _load_env_file(path=".env"):
+    """Load KEY=VALUE pairs from a local .env file (local runs only).
+
+    GitHub Actions supplies TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID via secrets;
+    .env is purely an optional convenience for running the script locally.
     """
     if not os.path.exists(path):
         return
@@ -53,106 +89,142 @@ def _load_env_file(path=".env"):
             value = value.strip().strip("'").strip('"')
             if key and os.environ.get(key) is None:
                 os.environ[key] = value
-            log.info("Loaded %s from %s (env override wins)", key, path)
+                log.info("Loaded %s from %s (env override wins)", key, path)
 
-
-def setup_logging():
-    logger = logging.getLogger("tracker")
-    logger.setLevel(logging.DEBUG)
-    logger.handlers.clear()
-
-    fmt = logging.Formatter(LOG_FORMAT, datefmt=LOG_DATEFMT)
-
-    console = logging.StreamHandler(sys.stdout)
-    console.setLevel(logging.DEBUG)
-    console.setFormatter(fmt)
-    logger.addHandler(console)
-
-    file_handler = logging.FileHandler(LOG_FILE, encoding="utf-8")
-    file_handler.setLevel(logging.DEBUG)
-    file_handler.setFormatter(fmt)
-    logger.addHandler(file_handler)
-
-    return logger
-
-
-log = setup_logging()
 
 _load_env_file()
 
-BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
-CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
-
 # ---------------------------------------------------------------------------
-# Scraping
+# Core model
 # ---------------------------------------------------------------------------
-def fetch_recent_blogs():
-    """Fetch blog posts from the Counterpoint insights listing page.
+@dataclass
+class BlogPost:
+    title: str
+    link: str
+    display_date: str
+    category: str
+    published: date  # parsed date, used for the "published today" filter
 
-    Each card is an <a> linking to /en/insights/<slug> whose text is exactly
-    three lines: [category, title, date]. Newest posts come first.
+
+class BlogSource:
+    """Base class for a blog listing source.
+
+    Subclass and implement ``extract_cards``. Everything else (fetch, dedupe,
+    notification) is handled generically.
     """
-    log.info("Fetching %s ...", TARGET_URL)
-    try:
-        res = requests.get(TARGET_URL, headers=REQUEST_HEADERS, timeout=20)
-    except requests.RequestException as e:
-        log.error("Request failed for %s: %s", TARGET_URL, e)
-        return []
 
-    if res.status_code != 200:
-        log.error("Unexpected HTTP status %s for %s", res.status_code, TARGET_URL)
-        return []
+    name: str = "unnamed"
+    listing_url: str = ""
+    base_url: str = ""
+    timezone: str = "UTC"
+    date_format: str = "%B %d, %Y"
 
-    soup = BeautifulSoup(res.text, "html.parser")
-    blogs = []
-    for tag in soup.find_all("a", href=True):
-        href = tag["href"].strip()
-        if not INSIGHT_LINK_RE.match(href):
-            continue
+    # --- pure helpers ------------------------------------------------------
+    def today(self) -> date:
+        try:
+            tz = ZoneInfo(self.timezone)
+        except (ZoneInfoNotFoundError, ValueError):
+            log.warning("[%s] Unknown timezone %r, falling back to UTC", self.name, self.timezone)
+            tz = timezone.utc
+        return datetime.now(tz).date()
 
-        lines = [line.strip() for line in tag.get_text("\n").split("\n") if line.strip()]
-        if len(lines) < 3:
-            log.warning("Skipping card with unexpected structure (link=%s, lines=%s)", href, lines)
-            continue
+    def parse_date(self, value: str) -> Optional[date]:
+        try:
+            return datetime.strptime(value, self.date_format).date()
+        except (ValueError, TypeError):
+            return None
 
-        blogs.append(
-            {
-                "category": lines[0],
-                "title": lines[1],
-                "date": lines[2],
-                "link": urljoin(BASE_URL, href),
-            }
-        )
+    # --- I/O + scraping ----------------------------------------------------
+    def fetch_posts(self) -> List[BlogPost]:
+        log.info("[%s] Fetching %s ...", self.name, self.listing_url)
+        try:
+            res = requests.get(self.listing_url, headers=REQUEST_HEADERS, timeout=REQUEST_TIMEOUT)
+        except requests.RequestException as e:
+            log.error("[%s] Request failed: %s", self.name, e)
+            raise
 
-    log.info("Scraped %d blog post(s)", len(blogs))
-    return blogs
+        if res.status_code != 200:
+            log.error("[%s] Unexpected HTTP status %s", self.name, res.status_code)
+            raise RuntimeError(f"HTTP {res.status_code}")
 
+        soup = BeautifulSoup(res.text, "html.parser")
+        posts = self.extract_cards(soup)
+        log.info("[%s] Found %d post(s) on page", self.name, len(posts))
+        return posts
+
+    def extract_cards(self, soup: BeautifulSoup) -> List[BlogPost]:
+        raise NotImplementedError
+
+    # --- notification ------------------------------------------------------
+    def build_message(self, post: BlogPost) -> str:
+        title = html_lib.escape(post.title)
+        display_date = html_lib.escape(post.display_date)
+        link = html_lib.escape(post.link)
+        source = html_lib.escape(self.name)
+
+        message = f"🔔 <b>New post on {source}!</b>\n\n<b>Title:</b> {title}"
+        if post.category:
+            message += f"\n<b>Category:</b> {html_lib.escape(post.category)}"
+        message += f"\n<b>Date:</b> {display_date}\n\n🔗 <a href=\"{link}\">Read article</a>"
+        return message
+
+
+class CounterpointSource(BlogSource):
+    name = "Counterpoint Research"
+    listing_url = "https://counterpointresearch.com/en/insights"
+    base_url = "https://counterpointresearch.com"
+    timezone = "UTC"
+    date_format = "%B %d, %Y"
+
+    # Each card is an <a> to /en/insights/<slug> whose text is [category, title, date].
+    link_pattern = re.compile(r"^/en/insights/[a-z0-9-]+/?$")
+
+    def extract_cards(self, soup: BeautifulSoup) -> List[BlogPost]:
+        posts: List[BlogPost] = []
+        for tag in soup.find_all("a", href=True):
+            href = tag["href"].strip()
+            if not self.link_pattern.match(href):
+                continue
+
+            lines = [line.strip() for line in tag.get_text("\n").split("\n") if line.strip()]
+            if len(lines) < 3:
+                log.warning("[%s] Skipping card with unexpected structure (link=%s, lines=%s)",
+                            self.name, href, lines)
+                continue
+
+            category, title, display_date = lines[0], lines[1], lines[2]
+            published = self.parse_date(display_date)
+            if published is None:
+                log.warning("[%s] Skipping card with unparseable date %r (link=%s)",
+                            self.name, display_date, href)
+                continue
+
+            posts.append(BlogPost(
+                title=title,
+                link=urljoin(self.base_url, href),
+                display_date=display_date,
+                category=category,
+                published=published,
+            ))
+        return posts
+
+
+# Register every supported website here. Add new sources by appending to this list.
+SOURCES: List[BlogSource] = [CounterpointSource()]
 
 # ---------------------------------------------------------------------------
 # Telegram notifications
 # ---------------------------------------------------------------------------
-def build_message(blog):
-    title = html_lib.escape(blog["title"])
-    category = html_lib.escape(blog["category"])
-    date = html_lib.escape(blog["date"])
-    link = html_lib.escape(blog["link"])
-    return (
-        "🔔 <b>New blog on Counterpoint Research!</b>\n\n"
-        f"<b>Title:</b> {title}\n"
-        f"<b>Category:</b> {category}\n"
-        f"<b>Date:</b> {date}\n\n"
-        f"🔗 <a href=\"{link}\">Read article</a>"
-    )
-
-
-def send_telegram_message(text, max_retries=3):
-    if not BOT_TOKEN or not CHAT_ID:
+def send_telegram_message(text: str, max_retries: int = TELEGRAM_MAX_RETRIES) -> bool:
+    token = os.getenv("TELEGRAM_BOT_TOKEN")
+    chat_id = os.getenv("TELEGRAM_CHAT_ID")
+    if not token or not chat_id:
         log.error("Missing TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID secrets")
         return False
 
-    url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
+    url = TELEGRAM_API_URL.format(token=token)
     payload = {
-        "chat_id": CHAT_ID,
+        "chat_id": chat_id,
         "text": text,
         "parse_mode": "HTML",
         "disable_web_page_preview": False,
@@ -160,7 +232,7 @@ def send_telegram_message(text, max_retries=3):
 
     for attempt in range(1, max_retries + 1):
         try:
-            res = requests.post(url, json=payload, timeout=15)
+            res = requests.post(url, json=payload, timeout=TELEGRAM_TIMEOUT)
             if res.status_code == 200:
                 log.info("Telegram API accepted message (attempt %d)", attempt)
                 return True
@@ -168,13 +240,8 @@ def send_telegram_message(text, max_retries=3):
                 description = res.json().get("description", res.text[:200])
             except ValueError:
                 description = res.text[:200]
-            log.error(
-                "Telegram API returned HTTP %s (attempt %d/%d): %s",
-                res.status_code,
-                attempt,
-                max_retries,
-                description,
-            )
+            log.error("Telegram API returned HTTP %s (attempt %d/%d): %s",
+                      res.status_code, attempt, max_retries, description)
         except requests.RequestException as e:
             log.error("Telegram network error (attempt %d/%d): %s", attempt, max_retries, e)
 
@@ -185,103 +252,101 @@ def send_telegram_message(text, max_retries=3):
 
 
 # ---------------------------------------------------------------------------
-# State / memory
+# Memory (single source of truth)
 # ---------------------------------------------------------------------------
-def load_processed_links():
+def load_processed_links() -> set:
     if os.path.exists(MEMORY_FILE):
         with open(MEMORY_FILE, encoding="utf-8") as f:
             links = {line.strip() for line in f if line.strip()}
         log.info("Loaded %d processed link(s) from %s", len(links), MEMORY_FILE)
         return links
 
-    if os.path.exists(SEED_FILE):
-        with open(SEED_FILE, encoding="utf-8") as f:
-            seed = f.read().strip()
-        if seed:
-            log.info("No %s found, seeding memory from %s: %s", MEMORY_FILE, SEED_FILE, seed)
-            return {seed}
-
-    log.info("No %s found and no seed available; starting with empty memory", MEMORY_FILE)
+    log.info("No %s yet: first run, nothing sent before.", MEMORY_FILE)
     return set()
 
 
-def write_processed_links(links):
+def save_processed_links(links: set) -> None:
     with open(MEMORY_FILE, "w", encoding="utf-8") as f:
         for link in sorted(links):
             f.write(link + "\n")
     log.info("Wrote %d processed link(s) to %s", len(links), MEMORY_FILE)
 
 
-def write_status(value):
-    with open(STATUS_FILE, "w", encoding="utf-8") as f:
-        f.write(value)
-    log.info("Status file %s set to '%s'", STATUS_FILE, value)
-
-
 # ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
-def main():
+def main() -> int:
     started = datetime.now(timezone.utc)
-    log.info("=" * 60)
-    log.info("Counterpoint Insights tracker started (UTC: %s)", started.isoformat())
+    log.info("=" * 72)
+    log.info("Blog tracker started (UTC: %s) | sources=%s",
+             started.isoformat(), ", ".join(s.name for s in SOURCES))
 
-    if not BOT_TOKEN or not CHAT_ID:
+    if not os.getenv("TELEGRAM_BOT_TOKEN") or not os.getenv("TELEGRAM_CHAT_ID"):
         log.error("Missing TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID secrets")
-        write_status("no_update")
-        sys.exit(1)
-
-    blogs = fetch_recent_blogs()
-    if not blogs:
-        log.warning(
-            "No blog posts found. Either the site structure changed or the request failed. "
-            "Check tracker.log for details."
-        )
-        write_status("no_update")
-        return
+        return 1
 
     processed = load_processed_links()
-    new_blogs = [b for b in blogs if b["link"] not in processed]
-    log.info("Total posts on page: %d | Already processed: %d | New: %d",
-             len(blogs), len(processed), len(new_blogs))
-    for b in new_blogs:
-        log.info("  NEW: [%s] %s (%s)", b["category"], b["title"], b["date"])
+    exit_code = 0
+    total_new = 0
+    total_sent = 0
+    total_failed = 0
 
-    if not new_blogs:
-        log.info("No new posts since last check. Nothing to notify.")
-        write_status("no_update")
-        return
+    for source in SOURCES:
+        today = source.today()
+        log.info("[%s] 'today' in %s = %s", source.name, source.timezone, today.isoformat())
 
-    notified = 0
-    failed = 0
-    for blog in new_blogs[:MAX_NOTIFY_PER_RUN]:
-        message = build_message(blog)
-        if send_telegram_message(message):
-            notified += 1
-            processed.add(blog["link"])
-            log.info("Notified: %s -> %s", blog["title"], blog["link"])
-        else:
-            failed += 1
-            log.error("FAILED to notify: %s -> %s", blog["title"], blog["link"])
+        try:
+            posts = source.fetch_posts()
+        except Exception as e:
+            log.error("[%s] Failed to scrape listing: %s", source.name, e)
+            exit_code = 1
+            continue
 
-    if notified:
-        write_processed_links(processed)
-        write_status("update_committed")
+        today_posts = [p for p in posts if p.published == today]
+        older_counts = {}
+        for p in posts:
+            if p.published != today:
+                older_counts[p.published.isoformat()] = older_counts.get(p.published.isoformat(), 0) + 1
+        log.info("[%s] Posts on page: %d | published today: %d | older (ignored): %s",
+                 source.name, len(posts), len(today_posts),
+                 ", ".join(f"{d}: {n}" for d, n in sorted(older_counts.items())) or "none")
+
+        new_posts = [p for p in today_posts if p.link not in processed]
+        log.info("[%s] New posts to notify: %d", source.name, len(new_posts))
+        for p in new_posts:
+            log.info("[%s]   NEW: [%s] %s (%s) -> %s", source.name, p.category, p.title, p.display_date, p.link)
+
+        total_new += len(new_posts)
+        for post in new_posts:
+            if send_telegram_message(source.build_message(post)):
+                total_sent += 1
+                processed.add(post.link)
+                log.info("[%s] Notified: %s", source.name, post.title)
+            else:
+                total_failed += 1
+                log.error("[%s] FAILED to notify: %s -> %s", source.name, post.title, post.link)
+
+    if total_sent:
+        save_processed_links(processed)
+    elif total_new == 0:
+        log.info("No new posts published today. Nothing to notify.")
     else:
-        write_status("no_update")
+        log.warning("No notifications were delivered; memory not updated (will retry next run).")
 
-    log.info(
-        "Run finished in %.1fs | total=%d | notified=%d | failed=%d",
-        (datetime.now(timezone.utc) - started).total_seconds(),
-        len(blogs),
-        notified,
-        failed,
-    )
+    log.info("Summary: new=%d sent=%d failed=%d | elapsed=%.1fs",
+             total_new, total_sent, total_failed,
+             (datetime.now(timezone.utc) - started).total_seconds())
+    log.info("=" * 72)
 
-    if failed:
-        log.error("%d notification(s) failed. Check Telegram token/chat-id and network.", failed)
-        sys.exit(1)
+    if total_failed:
+        log.error("%d notification(s) failed. Check Telegram token/chat-id and network.", total_failed)
+        exit_code = 1
+    return exit_code
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        sys.exit(main())
+    except Exception:
+        log.exception("Unhandled exception in main")
+        sys.exit(1)

@@ -1,8 +1,9 @@
-name: Daily Counterpoint Tracker
+name: Daily Blog Tracker
 
 on:
   schedule:
-    - cron: '0 9 * * *'
+    - cron: '0 15 * * *'   # 3 PM UTC
+    - cron: '0 21 * * *'   # 9 PM UTC
   workflow_dispatch:
 
 jobs:
@@ -23,14 +24,14 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install requests beautifulsoup4
+        pip install requests beautifulsoup4 tzdata
 
     - name: Run Scraper Script
       id: scraper
       env:
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-      run: python script.py
+      run: python -u script.py
 
     - name: Upload Tracker Logs
       if: always()
@@ -44,16 +45,12 @@ jobs:
     - name: Commit Memory State Updates Back to Repo
       if: always()
       run: |
-        if [ -f sync_status.txt ] && grep -q "update_committed" sync_status.txt; then
-          git config --global user.name "GitHub Automation Bot"
-          git config --global user.email "actions@github.com"
-          git add processed_links.txt
-          if ! git diff --cached --quiet; then
-            git commit -m "Automated Sync: Memory state update"
-            git push
-          else
-            echo "No changes to commit (state already up to date)."
-          fi
+        git config --global user.name "GitHub Automation Bot"
+        git config --global user.email "actions@github.com"
+        git add processed_links.txt
+        if ! git diff --cached --quiet; then
+          git commit -m "Automated Sync: memory state update"
+          git push
         else
-          echo "No new historical deliveries tracked. Aborting commit sync."
+          echo "No state changes. Skipping commit."
         fi
