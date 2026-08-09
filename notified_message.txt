@@ -1,11 +1,11 @@
 ========================================================================
-Run: 2026-08-09 11:47:01 IST
+Run: 2026-08-09 11:50:34 IST
 Sources: 8 | ok: 6 | failed: 2 | new reports: 0
 Failed sources: Gartner Newsroom, Anarock Research Reports
 ========================================================================
 
 📊 <b>Blog &amp; Report Monitor</b>
-🕒 <i>Generated 2026-08-09 11:47 IST</i>
+🕒 <i>Generated 2026-08-09 11:50 IST</i>
 
 🏢 <b>Counterpoint Research</b>
 🔗 <a href="https://counterpointresearch.com/en/insights">Website</a>
