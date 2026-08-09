@@ -25,6 +25,7 @@ import os
 import re
 import sys
 import time
+import json
 import html as html_lib
 import logging
 from dataclasses import dataclass, field
@@ -44,7 +45,7 @@ NOTIFICATION_LOG_FILE = "notified_message.txt"
 IST = ZoneInfo("Asia/Kolkata")  # user-facing timezone for cron "today" filtering
 TELEGRAM_API_URL = "https://api.telegram.org/bot{token}/sendMessage"
 REQUEST_TIMEOUT = 20
-REQUEST_MAX_RETRIES = 2
+REQUEST_MAX_RETRIES = 3
 TELEGRAM_TIMEOUT = 15
 TELEGRAM_MAX_RETRIES = 3
 TELEGRAM_MSG_LIMIT = 4000  # keep safely under Telegram's 4096-char limit
@@ -479,11 +480,19 @@ class AnarockReportsSource(BlogSource):
     )
 
     def extract_cards(self, soup: BeautifulSoup) -> List[BlogPost]:
-        blob = "".join(self.blob_re.findall(str(soup))).replace('\\"', '"')
+        # Each push payload is a JSON string literal; decoding it resolves
+        # \" escapes and \uXXXX unicode sequences (e.g. \u0026 -> &) in titles.
+        payloads = []
+        for group in self.blob_re.findall(str(soup)):
+            try:
+                payloads.append(json.loads('"' + group + '"'))
+            except ValueError:
+                log.warning("[%s] Could not decode a Next.js payload, skipping", self.name)
+        text = "".join(payloads)
 
         posts: List[BlogPost] = []
         seen: set = set()
-        for title, slug, display_date in self.entry_re.findall(blob):
+        for title, slug, display_date in self.entry_re.findall(text):
             link = urljoin(self.base_url, f"/research/research-reports/{slug}")
             if link in seen:
                 continue
