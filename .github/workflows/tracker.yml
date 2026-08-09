@@ -2,8 +2,8 @@ name: Daily Blog Tracker
 
 on:
   schedule:
-    - cron: '0 15 * * *'   # 3 PM UTC
-    - cron: '0 21 * * *'   # 9 PM UTC
+    - cron: '30 9 * * *'    # 9:30 AM UTC = 3:00 PM IST
+    - cron: '30 15 * * *'   # 3:30 PM UTC = 9:00 PM IST
   workflow_dispatch:
 
 jobs:
@@ -47,7 +47,7 @@ jobs:
       run: |
         git config --global user.name "GitHub Automation Bot"
         git config --global user.email "actions@github.com"
-        git add processed_*.txt
+        git add processed_*.txt notified_message.txt
         if ! git diff --cached --quiet; then
           git commit -m "Automated Sync: memory state update"
           git push

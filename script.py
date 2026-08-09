@@ -40,6 +40,8 @@ from bs4 import BeautifulSoup
 # Configuration
 # ---------------------------------------------------------------------------
 LOG_FILE = "tracker.log"
+NOTIFICATION_LOG_FILE = "notified_message.txt"
+IST = ZoneInfo("Asia/Kolkata")  # user-facing timezone for cron "today" filtering
 TELEGRAM_API_URL = "https://api.telegram.org/bot{token}/sendMessage"
 REQUEST_TIMEOUT = 20
 REQUEST_MAX_RETRIES = 2
@@ -138,7 +140,7 @@ class BlogSource:
     key: str = "unnamed"  # used for the per-source memory file name
     listing_url: str = ""
     base_url: str = ""
-    timezone: str = "UTC"
+    timezone: str = "Asia/Kolkata"
     date_format: str = "%B %d, %Y"
 
     # --- pure helpers ------------------------------------------------------
@@ -211,7 +213,7 @@ class CounterpointSource(BlogSource):
     key = "counterpoint"
     listing_url = "https://counterpointresearch.com/en/insights"
     base_url = "https://counterpointresearch.com"
-    timezone = "UTC"
+    timezone = "Asia/Kolkata"
     date_format = "%B %d, %Y"
 
     # Each card is an <a> to /en/insights/<slug> whose text is [category, title, date].
@@ -252,7 +254,7 @@ class GartnerSource(BlogSource):
     key = "gartner"
     listing_url = "https://www.gartner.com/en/newsroom/archive"
     base_url = "https://www.gartner.com"
-    timezone = "UTC"
+    timezone = "Asia/Kolkata"
     date_format = "%b %d, %Y"
 
     # Each card is div.individual-block with an <a> to /en/newsroom/press-releases/<slug>,
@@ -305,7 +307,7 @@ class CrisilSource(BlogSource):
     key = "crisil"
     listing_url = "https://www.crisil.com/en/home/what-we-think/all-our-thinking.html"
     base_url = "https://www.crisil.com"
-    timezone = "UTC"
+    timezone = "Asia/Kolkata"
     date_format = "%b %d, %Y"
 
     # Each card (div.crisil-cards) has a .card-title, .card-publish-date,
@@ -350,7 +352,7 @@ class CushmanSource(BlogSource):
     key = "cushman"
     listing_url = "https://www.cushmanwakefield.com/en/india/insights"
     base_url = "https://www.cushmanwakefield.com"
-    timezone = "UTC"
+    timezone = "Asia/Kolkata"
     date_format = "%d/%m/%Y"
     date_re = re.compile(r"(\d{2}/\d{2}/\d{4})")
 
@@ -410,7 +412,7 @@ class TkcSource(BlogSource):
     key = "tkc"
     listing_url = "https://tkc.in/feed/"
     base_url = "https://tkc.in"
-    timezone = "UTC"
+    timezone = "Asia/Kolkata"
     date_format = "%a, %d %b %Y %H:%M:%S %z"
 
     item_re = re.compile(r"<item>(.*?)</item>", re.S)
@@ -467,7 +469,7 @@ class AnarockReportsSource(BlogSource):
     key = "anarock"
     listing_url = "https://www.anarock.com/research/research-reports"
     base_url = "https://www.anarock.com"
-    timezone = "UTC"
+    timezone = "Asia/Kolkata"
     date_format = "%Y-%m-%d"
 
     blob_re = re.compile(r'self\.__next_f\.push\(\[1,"(.*?)"\]\)', re.S)
@@ -508,7 +510,7 @@ class SiamSource(BlogSource):
     key = "siam"
     listing_url = "https://www.siam.in/news-&-updates/press-releases"
     base_url = "https://www.siam.in"
-    timezone = "UTC"
+    timezone = "Asia/Kolkata"
     date_format = "%d-%b-%Y"
 
     # Each card (.press_inner .pressbx_large) has <ul><li>date</li><li>city</li></ul>,
@@ -561,7 +563,7 @@ class FadaSource(BlogSource):
     key = "fada"
     listing_url = "https://fada.in/press-release-list.php"
     base_url = "https://fada.in"
-    timezone = "UTC"
+    timezone = "Asia/Kolkata"
     date_format = "%B, %Y"
 
     def matches_date(self, published: date) -> bool:
@@ -684,7 +686,7 @@ def build_report_messages(reports: List[SourceReport], limit: int = TELEGRAM_MSG
     into messages that account for the header and footer so nothing ever exceeds
     Telegram's 4096-char limit.
     """
-    generated = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+    generated = datetime.now(IST).strftime("%Y-%m-%d %H:%M IST")
     header = f"📊 <b>Blog &amp; Report Monitor</b>\n🕒 <i>Generated {generated}</i>\n\n"
     footer = "\n—\n<i>Daily tracker report</i>"
     chunk_limit = max(100, limit - len(header) - len(footer))
@@ -711,6 +713,38 @@ def build_report_messages(reports: List[SourceReport], limit: int = TELEGRAM_MSG
         messages.append(current.rstrip() + footer)
 
     return messages or [header + footer]
+
+
+# ---------------------------------------------------------------------------
+# Notification log (what was published, for the user's visibility)
+# ---------------------------------------------------------------------------
+def write_notification_log(messages: List[str], reports: List[SourceReport]) -> None:
+    """Record what is about to be sent to Telegram in notified_message.txt.
+
+    The file is committed back to the repo by the workflow so the user always
+    has visibility into what the tracker is posting.
+    """
+    ok_count = sum(1 for r in reports if r.status == "ok")
+    failed = [r.source.name for r in reports if r.status == "error"]
+    new_count = sum(len(r.new_posts) for r in reports)
+
+    lines = [
+        "=" * 72,
+        f"Run: {datetime.now(IST).strftime('%Y-%m-%d %H:%M:%S IST')}",
+        f"Sources: {len(reports)} | ok: {ok_count} | failed: {len(failed)} | new reports: {new_count}",
+    ]
+    if failed:
+        lines.append(f"Failed sources: {', '.join(failed)}")
+    lines.append("=" * 72)
+    lines.append("")
+
+    for message in messages:
+        lines.append(message)
+        lines.append("")
+
+    with open(NOTIFICATION_LOG_FILE, "w", encoding="utf-8") as f:
+        f.write("\n".join(lines) + "\n")
+    log.info("Wrote %d message(s) to %s", len(messages), NOTIFICATION_LOG_FILE)
 
 
 # ---------------------------------------------------------------------------
@@ -828,6 +862,8 @@ def main() -> int:
              len(messages), len(reports))
     for i, msg in enumerate(messages, start=1):
         log.info("  message %d/%d: %d chars", i, len(messages), len(msg))
+
+    write_notification_log(messages, reports)
 
     delivered = True
     for i, message in enumerate(messages, start=1):
