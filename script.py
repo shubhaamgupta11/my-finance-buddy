@@ -728,10 +728,12 @@ def build_report_messages(reports: List[SourceReport], limit: int = TELEGRAM_MSG
 # Notification log (what was published, for the user's visibility)
 # ---------------------------------------------------------------------------
 def write_notification_log(messages: List[str], reports: List[SourceReport]) -> None:
-    """Record what is about to be sent to Telegram in notified_message.txt.
+    """Append a dated entry of what is about to be sent to Telegram.
 
-    The file is committed back to the repo by the workflow so the user always
-    has visibility into what the tracker is posting.
+    History accumulates in notified_message.txt (one block per run, delimited
+    by the "Run:" timestamp) so the user can debug what was posted. The file
+    is committed back to the repo by the workflow; delete it manually when it
+    grows too large.
     """
     ok_count = sum(1 for r in reports if r.status == "ok")
     failed = [r.source.name for r in reports if r.status == "error"]
@@ -751,7 +753,7 @@ def write_notification_log(messages: List[str], reports: List[SourceReport]) -> 
         lines.append(message)
         lines.append("")
 
-    with open(NOTIFICATION_LOG_FILE, "w", encoding="utf-8") as f:
+    with open(NOTIFICATION_LOG_FILE, "a", encoding="utf-8") as f:
         f.write("\n".join(lines) + "\n")
     log.info("Wrote %d message(s) to %s", len(messages), NOTIFICATION_LOG_FILE)
 
