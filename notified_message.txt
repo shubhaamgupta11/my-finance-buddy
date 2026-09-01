@@ -2305,3 +2305,54 @@ Failed sources: Gartner Newsroom, Anarock Research Reports
 —
 <i>Daily tracker report</i>
 
+========================================================================
+Run: 2026-09-01 19:43:45 IST
+Sources: 8 | ok: 6 | failed: 2 | new reports: 5
+Failed sources: Gartner Newsroom, Anarock Research Reports
+========================================================================
+
+📊 <b>Blog &amp; Report Monitor</b>
+🕒 <i>Generated 2026-09-01 19:43 IST</i>
+
+🏢 <b>Counterpoint Research</b>
+🔗 <a href="https://counterpointresearch.com/en/insights">Website</a>
+<b>New reports:</b> 2
+1. <a href="https://counterpointresearch.com/en/insights/from-smartphone-to-ai-xiaomis-shift-toward-a-multi-domain-ai-chip-ecosystem">From Smartphone to AI: Xiaomi’s Shift Toward a Multi-domain AI Chip Ecosystem</a>
+2. <a href="https://counterpointresearch.com/en/insights/china-does-not-need-to-beat-claude-it-needs-to-be-second">China Doesn&#x27;t Need to Beat Claude. It Needs to Be Second</a>
+
+🏢 <b>Gartner Newsroom</b>
+🔗 <a href="https://www.gartner.com/en/newsroom/archive">Website</a>
+⚠️ <b>Failed to fetch report.</b> Please check the tracker log.
+
+🏢 <b>CRISIL - All Our Thinking</b>
+🔗 <a href="https://www.crisil.com/en/home/what-we-think/all-our-thinking.html">Website</a>
+<b>New reports:</b> 1
+1. <a href="https://www.crisil.com/content/intelligence/en/homepage/what-we-think/all-our-thinking/reports/2026/09/momentum-continues.html">Crisil Economy First Cut: Momentum continues</a>
+
+🏢 <b>Cushman &amp; Wakefield India Insights</b>
+🔗 <a href="https://www.cushmanwakefield.com/en/india/insights">Website</a>
+<b>New reports:</b> 0
+<i>No new reports for now. Stay tuned ✌️</i>
+
+🏢 <b>TKC Perspective</b>
+🔗 <a href="https://tkc.in/feed/">Website</a>
+<b>New reports:</b> 0
+<i>No new reports for now. Stay tuned ✌️</i>
+
+🏢 <b>Anarock Research Reports</b>
+🔗 <a href="https://www.anarock.com/research/research-reports">Website</a>
+⚠️ <b>Failed to fetch report.</b> Please check the tracker log.
+
+🏢 <b>SIAM Press Releases</b>
+🔗 <a href="https://www.siam.in/news-&amp;-updates/press-releases">Website</a>
+<b>New reports:</b> 0
+<i>No new reports for now. Stay tuned ✌️</i>
+
+🏢 <b>FADA Press Releases</b>
+🔗 <a href="https://fada.in/press-release-list.php">Website</a>
+<b>New reports:</b> 2
+1. <a href="https://fada.in/images/press-release/16a96d16c19f05FADA%20Unveils%20Vision%20for%20%E2%80%98BHARAT%20Inclusive%20Mobility.pdf">FADA Unveils Vision for ‘BHARAT: Inclusive Mobility, Inspired Growth’ at the 8th Auto Retail Conclave 2026</a>
+2. <a href="https://fada.in/images/press-release/16a9680f1928a6FADA_PressRelease_01092026_Mr_Sai_Giridhar_takes_over_as_the_38th_President.pdf">CHANGE OF GUARD AT FADA AS MR. C S VIGNESHWAR HANDS OVER THE BATON  TO MR. SAI GIRIDHAR, FADA’S 38th PRESIDENT</a>
+—
+<i>Daily tracker report</i>
+
