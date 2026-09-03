@@ -2507,3 +2507,53 @@ Failed sources: Gartner Newsroom, Anarock Research Reports
 —
 <i>Daily tracker report</i>
 
+========================================================================
+Run: 2026-09-03 19:12:40 IST
+Sources: 8 | ok: 6 | failed: 2 | new reports: 4
+Failed sources: Gartner Newsroom, Anarock Research Reports
+========================================================================
+
+📊 <b>Blog &amp; Report Monitor</b>
+🕒 <i>Generated 2026-09-03 19:12 IST</i>
+
+🏢 <b>Counterpoint Research</b>
+🔗 <a href="https://counterpointresearch.com/en/insights">Website</a>
+<b>New reports:</b> 1
+1. <a href="https://counterpointresearch.com/en/insights/global-existing-smartphone-prices-climb-about-15-percent-in-2026">Global Existing Smartphone Prices Climb About 15% in 2026, New Launches 25% Costlier YoY as OEMs Maneuver Memory Price Hikes</a>
+
+🏢 <b>Gartner Newsroom</b>
+🔗 <a href="https://www.gartner.com/en/newsroom/archive">Website</a>
+⚠️ <b>Failed to fetch report.</b> Please check the tracker log.
+
+🏢 <b>CRISIL - All Our Thinking</b>
+🔗 <a href="https://www.crisil.com/en/home/what-we-think/all-our-thinking.html">Website</a>
+<b>New reports:</b> 0
+<i>No new reports for now. Stay tuned ✌️</i>
+
+🏢 <b>Cushman &amp; Wakefield India Insights</b>
+🔗 <a href="https://www.cushmanwakefield.com/en/india/insights">Website</a>
+<b>New reports:</b> 0
+<i>No new reports for now. Stay tuned ✌️</i>
+
+🏢 <b>TKC Perspective</b>
+🔗 <a href="https://tkc.in/feed/">Website</a>
+<b>New reports:</b> 0
+<i>No new reports for now. Stay tuned ✌️</i>
+
+🏢 <b>Anarock Research Reports</b>
+🔗 <a href="https://www.anarock.com/research/research-reports">Website</a>
+⚠️ <b>Failed to fetch report.</b> Please check the tracker log.
+
+🏢 <b>SIAM Press Releases</b>
+🔗 <a href="https://www.siam.in/news-&amp;-updates/press-releases">Website</a>
+<b>New reports:</b> 2
+1. <a href="https://www.siam.in/news-&amp;-updates/press-releases/pm-modi-calls-on-auto-industry-to-pursue-excellence-to-advance-viksit-bharat/614">PM Modi Calls on Auto Industry to Pursue Excellence to Advance Viksit Bharat</a>
+2. <a href="https://www.siam.in/news-&amp;-updates/press-releases/indias-automobile-industry-driving-leadership-in-sustainable-mobility/615">India’s Automobile Industry Driving Leadership In Sustainable Mobility</a>
+
+🏢 <b>FADA Press Releases</b>
+🔗 <a href="https://fada.in/press-release-list.php">Website</a>
+<b>New reports:</b> 1
+1. <a href="https://fada.in/images/press-release/16a9951c550c15FADA%20Press%20Release%20DSS%202026.pdf">FADA Press Release DSS 2026</a>
+—
+<i>Daily tracker report</i>
+
