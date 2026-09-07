@@ -2900,3 +2900,53 @@ Failed sources: Gartner Newsroom, Anarock Research Reports
 —
 <i>Daily tracker report</i>
 
+========================================================================
+Run: 2026-09-07 20:38:25 IST
+Sources: 8 | ok: 6 | failed: 2 | new reports: 3
+Failed sources: Gartner Newsroom, Anarock Research Reports
+========================================================================
+
+📊 <b>Blog &amp; Report Monitor</b>
+🕒 <i>Generated 2026-09-07 20:38 IST</i>
+
+🏢 <b>Counterpoint Research</b>
+🔗 <a href="https://counterpointresearch.com/en/insights">Website</a>
+<b>New reports:</b> 2
+1. <a href="https://counterpointresearch.com/en/insights/global-smartwatch-shipments-fall-4-percent-in-q2-2026-huawei-reaches-its-record-share">Global Smartwatch Shipments Fall 4% in Q2 2026; Huawei Reaches its Record Share</a>
+2. <a href="https://counterpointresearch.com/en/insights/global-foldable-shipments-to-hit-100-million-cumulative-milestone-by-end-of-2026">Global Foldable Shipments to Hit 100-million Cumulative Milestone by End of 2026</a>
+
+🏢 <b>Gartner Newsroom</b>
+🔗 <a href="https://www.gartner.com/en/newsroom/archive">Website</a>
+⚠️ <b>Failed to fetch report.</b> Please check the tracker log.
+
+🏢 <b>CRISIL - All Our Thinking</b>
+🔗 <a href="https://www.crisil.com/en/home/what-we-think/all-our-thinking.html">Website</a>
+<b>New reports:</b> 0
+<i>No new reports for now. Stay tuned ✌️</i>
+
+🏢 <b>Cushman &amp; Wakefield India Insights</b>
+🔗 <a href="https://www.cushmanwakefield.com/en/india/insights">Website</a>
+<b>New reports:</b> 0
+<i>No new reports for now. Stay tuned ✌️</i>
+
+🏢 <b>TKC Perspective</b>
+🔗 <a href="https://tkc.in/feed/">Website</a>
+<b>New reports:</b> 0
+<i>No new reports for now. Stay tuned ✌️</i>
+
+🏢 <b>Anarock Research Reports</b>
+🔗 <a href="https://www.anarock.com/research/research-reports">Website</a>
+⚠️ <b>Failed to fetch report.</b> Please check the tracker log.
+
+🏢 <b>SIAM Press Releases</b>
+🔗 <a href="https://www.siam.in/news-&amp;-updates/press-releases">Website</a>
+<b>New reports:</b> 0
+<i>No new reports for now. Stay tuned ✌️</i>
+
+🏢 <b>FADA Press Releases</b>
+🔗 <a href="https://fada.in/press-release-list.php">Website</a>
+<b>New reports:</b> 1
+1. <a href="https://fada.in/images/press-release/16a9e2ff1d6502FADA%20Releases%20August%202026%20Vehicle%20Retail%20Data.pdf">FADA Releases August 2026 Vehicle Retail Data</a>
+—
+<i>Daily tracker report</i>
+
