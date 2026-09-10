@@ -3198,3 +3198,54 @@ Failed sources: Gartner Newsroom, Anarock Research Reports
 —
 <i>Daily tracker report</i>
 
+========================================================================
+Run: 2026-09-10 19:13:54 IST
+Sources: 8 | ok: 6 | failed: 2 | new reports: 3
+Failed sources: Gartner Newsroom, Anarock Research Reports
+========================================================================
+
+📊 <b>Blog &amp; Report Monitor</b>
+🕒 <i>Generated 2026-09-10 19:13 IST</i>
+
+🏢 <b>Counterpoint Research</b>
+🔗 <a href="https://counterpointresearch.com/en/insights">Website</a>
+<b>New reports:</b> 3
+1. <a href="https://counterpointresearch.com/en/insights/ms-hwang-joins-cnbc-inside-sk-hynix-dollar-720-billion-ai-memory-buildout">MS Hwang Joins CNBC: Inside SK hynix&#x27;s $720 Billion AI Memory Buildout</a>
+2. <a href="https://counterpointresearch.com/en/insights/apple-surprises-with-iphone-duo-pricing-extending-its-premium-tier-above-rest-of-lineup">Apple Surprises With iPhone Duo Pricing, Extending its Premium Tier Above Rest of Lineup</a>
+3. <a href="https://counterpointresearch.com/en/insights/in-fold-panel-growth-signals-h2-2026-recovery-in-foldable-smartphone-panel-shipments-despite-h1-decline">In-Fold Panel Growth Signals H2 2026 Recovery in Foldable Smartphone Panel Shipments Despite H1 Decline</a>
+
+🏢 <b>Gartner Newsroom</b>
+🔗 <a href="https://www.gartner.com/en/newsroom/archive">Website</a>
+⚠️ <b>Failed to fetch report.</b> Please check the tracker log.
+
+🏢 <b>CRISIL - All Our Thinking</b>
+🔗 <a href="https://www.crisil.com/en/home/what-we-think/all-our-thinking.html">Website</a>
+<b>New reports:</b> 0
+<i>No new reports for now. Stay tuned ✌️</i>
+
+🏢 <b>Cushman &amp; Wakefield India Insights</b>
+🔗 <a href="https://www.cushmanwakefield.com/en/india/insights">Website</a>
+<b>New reports:</b> 0
+<i>No new reports for now. Stay tuned ✌️</i>
+
+🏢 <b>TKC Perspective</b>
+🔗 <a href="https://tkc.in/feed/">Website</a>
+<b>New reports:</b> 0
+<i>No new reports for now. Stay tuned ✌️</i>
+
+🏢 <b>Anarock Research Reports</b>
+🔗 <a href="https://www.anarock.com/research/research-reports">Website</a>
+⚠️ <b>Failed to fetch report.</b> Please check the tracker log.
+
+🏢 <b>SIAM Press Releases</b>
+🔗 <a href="https://www.siam.in/news-&amp;-updates/press-releases">Website</a>
+<b>New reports:</b> 0
+<i>No new reports for now. Stay tuned ✌️</i>
+
+🏢 <b>FADA Press Releases</b>
+🔗 <a href="https://fada.in/press-release-list.php">Website</a>
+<b>New reports:</b> 0
+<i>No new reports for now. Stay tuned ✌️</i>
+—
+<i>Daily tracker report</i>
+
