@@ -3592,3 +3592,52 @@ Failed sources: Gartner Newsroom, Anarock Research Reports
 —
 <i>Daily tracker report</i>
 
+========================================================================
+Run: 2026-09-14 21:27:26 IST
+Sources: 8 | ok: 6 | failed: 2 | new reports: 2
+Failed sources: Gartner Newsroom, Anarock Research Reports
+========================================================================
+
+📊 <b>Blog &amp; Report Monitor</b>
+🕒 <i>Generated 2026-09-14 21:27 IST</i>
+
+🏢 <b>Counterpoint Research</b>
+🔗 <a href="https://counterpointresearch.com/en/insights">Website</a>
+<b>New reports:</b> 1
+1. <a href="https://counterpointresearch.com/en/insights/india-road-to-semiconductor-self-reliance-from-manufacturing-chips-to-building-complete-ecosystem">India’s Road to Semiconductor Self-Reliance: From Manufacturing Chips to Building Complete Ecosystem</a>
+
+🏢 <b>Gartner Newsroom</b>
+🔗 <a href="https://www.gartner.com/en/newsroom/archive">Website</a>
+⚠️ <b>Failed to fetch report.</b> Please check the tracker log.
+
+🏢 <b>CRISIL - All Our Thinking</b>
+🔗 <a href="https://www.crisil.com/en/home/what-we-think/all-our-thinking.html">Website</a>
+<b>New reports:</b> 0
+<i>No new reports for now. Stay tuned ✌️</i>
+
+🏢 <b>Cushman &amp; Wakefield India Insights</b>
+🔗 <a href="https://www.cushmanwakefield.com/en/india/insights">Website</a>
+<b>New reports:</b> 0
+<i>No new reports for now. Stay tuned ✌️</i>
+
+🏢 <b>TKC Perspective</b>
+🔗 <a href="https://tkc.in/feed/">Website</a>
+<b>New reports:</b> 0
+<i>No new reports for now. Stay tuned ✌️</i>
+
+🏢 <b>Anarock Research Reports</b>
+🔗 <a href="https://www.anarock.com/research/research-reports">Website</a>
+⚠️ <b>Failed to fetch report.</b> Please check the tracker log.
+
+🏢 <b>SIAM Press Releases</b>
+🔗 <a href="https://www.siam.in/news-&amp;-updates/press-releases">Website</a>
+<b>New reports:</b> 0
+<i>No new reports for now. Stay tuned ✌️</i>
+
+🏢 <b>FADA Press Releases</b>
+🔗 <a href="https://fada.in/press-release-list.php">Website</a>
+<b>New reports:</b> 1
+1. <a href="https://fada.in/images/press-release/16aa786596930cRosmerta%20Digital%20Services%20and%20FADA%20Partner%20to%20Make%20Vehicle%20Compliance%20Simpler%20with%20Rosmart.pdf">Rosmerta Digital Services and FADA Partner to Make Vehicle Compliance Simpler with Rosmart</a>
+—
+<i>Daily tracker report</i>
+
