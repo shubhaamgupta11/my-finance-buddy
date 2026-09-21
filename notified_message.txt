@@ -4279,3 +4279,53 @@ Failed sources: Gartner Newsroom, Anarock Research Reports, FADA Press Releases
 —
 <i>Daily tracker report</i>
 
+========================================================================
+Run: 2026-09-21 21:28:44 IST
+Sources: 8 | ok: 5 | failed: 3 | new reports: 3
+Failed sources: Gartner Newsroom, Anarock Research Reports, FADA Press Releases
+========================================================================
+
+📊 <b>Blog &amp; Report Monitor</b>
+🕒 <i>Generated 2026-09-21 21:28 IST</i>
+
+🏢 <b>Counterpoint Research</b>
+🔗 <a href="https://counterpointresearch.com/en/insights">Website</a>
+<b>New reports:</b> 3
+1. <a href="https://counterpointresearch.com/en/insights/global-ai-glasses-shipments-surge-263-percent-yoy-with-display-less-ai-glasses">Global AI Glasses Shipments Surge 263% YoY in H1 2026, with Display-less AI Glasses Accounting for 96% of Total</a>
+2. <a href="https://counterpointresearch.com/en/insights/56-of-sovereign-ai-llms-are-adapted-models-with-metas-llama-the-dominant-base">56% of Sovereign AI LLMs Are Adapted Models, With Meta’s Llama the Dominant Base, Followed by Alibaba’s Qwen and France’s Mistral</a>
+3. <a href="https://counterpointresearch.com/en/insights/global-quadruped-robot-shipments-hit-35000-units-in-growing-industry-demand">Global Quadruped Robot Shipments Hit 35,000 Units in H1 2026, Growing Industry Demand Boosts Long-term Potential</a>
+
+🏢 <b>Gartner Newsroom</b>
+🔗 <a href="https://www.gartner.com/en/newsroom/archive">Website</a>
+⚠️ <b>Failed to fetch report.</b> Please check the tracker log.
+
+🏢 <b>CRISIL - All Our Thinking</b>
+🔗 <a href="https://www.crisil.com/en/home/what-we-think/all-our-thinking.html">Website</a>
+<b>New reports:</b> 0
+<i>No new reports for now. Stay tuned ✌️</i>
+
+🏢 <b>Cushman &amp; Wakefield India Insights</b>
+🔗 <a href="https://www.cushmanwakefield.com/en/india/insights">Website</a>
+<b>New reports:</b> 0
+<i>No new reports for now. Stay tuned ✌️</i>
+
+🏢 <b>TKC Perspective</b>
+🔗 <a href="https://tkc.in/feed/">Website</a>
+<b>New reports:</b> 0
+<i>No new reports for now. Stay tuned ✌️</i>
+
+🏢 <b>Anarock Research Reports</b>
+🔗 <a href="https://www.anarock.com/research/research-reports">Website</a>
+⚠️ <b>Failed to fetch report.</b> Please check the tracker log.
+
+🏢 <b>SIAM Press Releases</b>
+🔗 <a href="https://www.siam.in/news-&amp;-updates/press-releases">Website</a>
+<b>New reports:</b> 0
+<i>No new reports for now. Stay tuned ✌️</i>
+
+🏢 <b>FADA Press Releases</b>
+🔗 <a href="https://fada.in/press-release-list.php">Website</a>
+⚠️ <b>Failed to fetch report.</b> Please check the tracker log.
+—
+<i>Daily tracker report</i>
+
