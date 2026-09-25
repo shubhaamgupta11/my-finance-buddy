@@ -1,5 +1,6 @@
 https://counterpointresearch.com/en/insights/56-of-sovereign-ai-llms-are-adapted-models-with-metas-llama-the-dominant-base
 https://counterpointresearch.com/en/insights/5g-a-underpins-the-intelligent-evolution-of-humanoid-robots-by-providing-network-level-support
+https://counterpointresearch.com/en/insights/alexa-in-india-amazon-bets-on-rising-smart-home-device-adoption
 https://counterpointresearch.com/en/insights/amdocs-motive-and-ericsson-lead-entitlement-server-core-rankings-in-2026
 https://counterpointresearch.com/en/insights/apple-surprises-with-iphone-duo-pricing-extending-its-premium-tier-above-rest-of-lineup
 https://counterpointresearch.com/en/insights/brazil-smartphone-shipments-decline-11-yoy-in-signaling-potential-double-digit
@@ -9,7 +10,9 @@ https://counterpointresearch.com/en/insights/chipflation-apples-iphone-18-choice
 https://counterpointresearch.com/en/insights/cii-seminar-on-hearables-and-wearables-2026
 https://counterpointresearch.com/en/insights/component-cost-shock-could-wipe-out-more-than-230-million-sub-dollar-200-smartphone-shipemts
 https://counterpointresearch.com/en/insights/decoding-the-memory-landscape-intels-integration-play-nand-supply-crunches-and-the-2028-horizon
+https://counterpointresearch.com/en/insights/explores-jabras-ai-powered-meeting-room-and-enterprise-collaboration-solutions
 https://counterpointresearch.com/en/insights/fcc-china-ban-ai-component
+https://counterpointresearch.com/en/insights/five-infrastructure-trends-to-watch-from-the-ai-infra-summit
 https://counterpointresearch.com/en/insights/from-smartphone-to-ai-xiaomis-shift-toward-a-multi-domain-ai-chip-ecosystem
 https://counterpointresearch.com/en/insights/global-ai-glasses-shipments-surge-263-percent-yoy-with-display-less-ai-glasses
 https://counterpointresearch.com/en/insights/global-cellular-iot-module-shipments-rise-11-yoy-in-4g-cat-1-bis-exceeds-half
@@ -45,3 +48,4 @@ https://counterpointresearch.com/en/insights/the-new-entrants-reshaping-indias-a
 https://counterpointresearch.com/en/insights/the-next-era-of-ai-from-personal-ai-to-physical-ai-counterpoint-china-seminar
 https://counterpointresearch.com/en/insights/the-trillion-dollars-bottleneck-inside-qualcomms-high-bandwidth-compute-bet-blog
 https://counterpointresearch.com/en/insights/the-us-says-chinas-ai-progress-is-down-to-distillation-but-is-it-that-clear-cut-cnbc
+https://counterpointresearch.com/en/insights/xiaomi-mijia-smart-air-purifier-6-review-clean-air-you-can-measure-not-just-filter
