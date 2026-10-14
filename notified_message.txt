@@ -6550,3 +6550,56 @@ Failed sources: Gartner Newsroom, Anarock Research Reports
 —
 <i>Daily tracker report</i>
 
+========================================================================
+Run: 2026-10-14 20:05:56 IST
+Sources: 8 | ok: 6 | failed: 2 | new reports: 7
+Failed sources: Gartner Newsroom, Anarock Research Reports
+========================================================================
+
+📊 <b>Blog &amp; Report Monitor</b>
+🕒 <i>Generated 2026-10-14 20:05 IST</i>
+
+🏢 <b>Counterpoint Research</b>
+🔗 <a href="https://counterpointresearch.com/en/insights">Website</a>
+<b>New reports:</b> 4
+1. <a href="https://counterpointresearch.com/en/insights/physical-intelligence-how-uses-rain-rfid-to-make-the-world-ai-ready">Physical Intelligence: How Impinj Uses RAIN RFID to Make the World AI-Ready</a>
+2. <a href="https://counterpointresearch.com/en/insights/lightmatter-links-with-odms-to-pave-a-glide-path-for-cpo-co-packaged-optics">Lightmatter Links with ODMs to Pave a Glide Path for CPO</a>
+3. <a href="https://counterpointresearch.com/en/insights/counterpoint-conversations-qualcomm-explains-dual-flagship-strategy-ai-gaming-smarter-cameras">Counterpoint Conversations: Qualcomm Explains Dual-Flagship Strategy, AI Gaming, Smarter Cameras &amp; Sustained Performance</a>
+4. <a href="https://counterpointresearch.com/en/insights/eliyan-serdes-microvcsels-copper-wall">Eliyan: SerDes for Hire and MicroVCSELs for Scaling the Copper Wall</a>
+
+🏢 <b>Gartner Newsroom</b>
+🔗 <a href="https://www.gartner.com/en/newsroom/archive">Website</a>
+⚠️ <b>Failed to fetch report.</b> Please check the tracker log.
+
+🏢 <b>CRISIL - All Our Thinking</b>
+🔗 <a href="https://www.crisil.com/en/home/what-we-think/all-our-thinking.html">Website</a>
+<b>New reports:</b> 2
+1. <a href="https://www.crisil.com/content/integral-iq/en/homepage/what-we-think/all-our-thinking/case-studies/2026/10/scaling-project-finance-credit-monitoring-enhances-portfolio-growth-by-45-percent.html">Scaling project finance credit monitoring enhances portfolio growth by &gt;45%</a>
+2. <a href="https://www.crisil.com/content/intelligence/en/homepage/what-we-think/all-our-thinking/reports/2026/10/rateview-october-2026.html">RateView</a>
+
+🏢 <b>Cushman &amp; Wakefield India Insights</b>
+🔗 <a href="https://www.cushmanwakefield.com/en/india/insights">Website</a>
+<b>New reports:</b> 0
+<i>No new reports for now. Stay tuned ✌️</i>
+
+🏢 <b>TKC Perspective</b>
+🔗 <a href="https://tkc.in/feed/">Website</a>
+<b>New reports:</b> 0
+<i>No new reports for now. Stay tuned ✌️</i>
+
+🏢 <b>Anarock Research Reports</b>
+🔗 <a href="https://www.anarock.com/research/research-reports">Website</a>
+⚠️ <b>Failed to fetch report.</b> Please check the tracker log.
+
+🏢 <b>SIAM Press Releases</b>
+🔗 <a href="https://www.siam.in/news-&amp;-updates/press-releases">Website</a>
+<b>New reports:</b> 0
+<i>No new reports for now. Stay tuned ✌️</i>
+
+🏢 <b>FADA Press Releases</b>
+🔗 <a href="https://fada.in/press-release-list.php">Website</a>
+<b>New reports:</b> 1
+1. <a href="https://fada.in/images/press-release/16acf397616dd9FADA_Press_Release_Agra%20Training%20Centre.pdf">FADA Academy and ASDC Inaugurate Their First Joint Training Centre at Agra to Build a Job-Ready Automotive Retail Workforce</a>
+—
+<i>Daily tracker report</i>
+
