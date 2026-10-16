@@ -17,6 +17,7 @@ https://counterpointresearch.com/en/insights/counterpoint-conversations-qualcomm
 https://counterpointresearch.com/en/insights/decoding-the-memory-landscape-intels-integration-play-nand-supply-crunches-and-the-2028-horizon
 https://counterpointresearch.com/en/insights/dollar-trillion-bottleneck-tsmc-oip-2026-ai-design-kit-packaging-innovations-3d-dram-timeline
 https://counterpointresearch.com/en/insights/eliyan-serdes-microvcsels-copper-wall
+https://counterpointresearch.com/en/insights/europe-ev-market-gets-more-competitive
 https://counterpointresearch.com/en/insights/european-operator-channel-benefits-from-low-end-collapse-in-regions
 https://counterpointresearch.com/en/insights/explores-jabras-ai-powered-meeting-room-and-enterprise-collaboration-solutions
 https://counterpointresearch.com/en/insights/fcc-china-ban-ai-component
@@ -72,6 +73,7 @@ https://counterpointresearch.com/en/insights/sandisk-investor-day-caching-out-th
 https://counterpointresearch.com/en/insights/sea-smartphone-shipments-fall-15-percent-yoy-steepest-since-q1-2023
 https://counterpointresearch.com/en/insights/server-led-essds-hit-48-percent-of-nand-shipments
 https://counterpointresearch.com/en/insights/survey-global-smartphone-buyers-feel-price-pressure
+https://counterpointresearch.com/en/insights/tenstorrent-at-the-open-frontier
 https://counterpointresearch.com/en/insights/the-new-entrants-reshaping-indias-affordable-smartphone-market
 https://counterpointresearch.com/en/insights/the-next-era-of-ai-from-personal-ai-to-physical-ai-counterpoint-china-seminar
 https://counterpointresearch.com/en/insights/the-race-towards-smarter-hearing-aids
