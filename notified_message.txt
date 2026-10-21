@@ -7243,3 +7243,56 @@ Failed sources: Gartner Newsroom, Anarock Research Reports
 —
 <i>Daily tracker report</i>
 
+========================================================================
+Run: 2026-10-21 20:03:56 IST
+Sources: 8 | ok: 6 | failed: 2 | new reports: 7
+Failed sources: Gartner Newsroom, Anarock Research Reports
+========================================================================
+
+📊 <b>Blog &amp; Report Monitor</b>
+🕒 <i>Generated 2026-10-21 20:03 IST</i>
+
+🏢 <b>Counterpoint Research</b>
+🔗 <a href="https://counterpointresearch.com/en/insights">Website</a>
+<b>New reports:</b> 1
+1. <a href="https://counterpointresearch.com/en/insights/ocp-key-takeaways-ai-compute-connectivity">OCP 2026: The AI Battleground Shifts from Compute to Connectivity</a>
+
+🏢 <b>Gartner Newsroom</b>
+🔗 <a href="https://www.gartner.com/en/newsroom/archive">Website</a>
+⚠️ <b>Failed to fetch report.</b> Please check the tracker log.
+
+🏢 <b>CRISIL - All Our Thinking</b>
+🔗 <a href="https://www.crisil.com/en/home/what-we-think/all-our-thinking.html">Website</a>
+<b>New reports:</b> 0
+<i>No new reports for now. Stay tuned ✌️</i>
+
+🏢 <b>Cushman &amp; Wakefield India Insights</b>
+🔗 <a href="https://www.cushmanwakefield.com/en/india/insights">Website</a>
+<b>New reports:</b> 0
+<i>No new reports for now. Stay tuned ✌️</i>
+
+🏢 <b>TKC Perspective</b>
+🔗 <a href="https://tkc.in/feed/">Website</a>
+<b>New reports:</b> 5
+1. <a href="https://tkc.in/ravindra-yadav-mint-value-commerce-zero-commission-strategy/">The Real Economics of Zero-Commission E-commerce</a>
+2. <a href="https://tkc.in/ankur-bisen-india-food-safety-compliance-boardroom-priority/">Food Safety Compliance in India 2026: From Regulatory Requirement to Boardroom Priority</a>
+3. <a href="https://tkc.in/aw26-material-trends-from-fiber-innovation-to-consumer-value/">AW26 Material Trends: From Fiber Innovation to Consumer Value</a>
+4. <a href="https://tkc.in/rebel-foods-growth-paradox-when-scale-becomes-the-constraint/">Rebel Foods’ Growth Paradox: When Scale Becomes the Constraint</a>
+5. <a href="https://tkc.in/7-elevens-india-exit-why-indias-convenience-store-opportunity-needs-a-rethink/">7-Eleven’s India Exit: Why India’s Convenience-Store Opportunity Needs a Rethink</a>
+
+🏢 <b>Anarock Research Reports</b>
+🔗 <a href="https://www.anarock.com/research/research-reports">Website</a>
+⚠️ <b>Failed to fetch report.</b> Please check the tracker log.
+
+🏢 <b>SIAM Press Releases</b>
+🔗 <a href="https://www.siam.in/news-&amp;-updates/press-releases">Website</a>
+<b>New reports:</b> 0
+<i>No new reports for now. Stay tuned ✌️</i>
+
+🏢 <b>FADA Press Releases</b>
+🔗 <a href="https://fada.in/press-release-list.php">Website</a>
+<b>New reports:</b> 1
+1. <a href="https://fada.in/images/press-release/16ad896132aebfFADA_Press_Release_Navratri&#x27;26_(Provisional).pdf">FADA Releases Navratri’26 Vehicle Retail Data (Provisional)</a>
+—
+<i>Daily tracker report</i>
+
