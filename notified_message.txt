@@ -7936,3 +7936,54 @@ Failed sources: Gartner Newsroom, Anarock Research Reports
 —
 <i>Daily tracker report</i>
 
+========================================================================
+Run: 2026-10-28 21:41:21 IST
+Sources: 8 | ok: 6 | failed: 2 | new reports: 3
+Failed sources: Gartner Newsroom, Anarock Research Reports
+========================================================================
+
+📊 <b>Blog &amp; Report Monitor</b>
+🕒 <i>Generated 2026-10-28 21:41 IST</i>
+
+🏢 <b>Counterpoint Research</b>
+🔗 <a href="https://counterpointresearch.com/en/insights">Website</a>
+<b>New reports:</b> 3
+1. <a href="https://counterpointresearch.com/en/insights/indias-xr-market-to-reach-inr-43-6-billion-by-2030-as-enterprise-adoption-accelerates">India&#x27;s XR Market to Reach INR 43.6 Billion by 2030 as Enterprise Adoption Accelerates</a>
+2. <a href="https://counterpointresearch.com/en/insights/test-driving-nvidias-l2-hyperion-av-stack">Test-Driving NVIDIA&#x27;s L2++ Hyperion AV Stack: A Mercedes CLA Ride Through Berlin</a>
+3. <a href="https://counterpointresearch.com/en/insights/india-xr-landscape">India’s XR Landscape:  Present Dynamics and Future Opportunities</a>
+
+🏢 <b>Gartner Newsroom</b>
+🔗 <a href="https://www.gartner.com/en/newsroom/archive">Website</a>
+⚠️ <b>Failed to fetch report.</b> Please check the tracker log.
+
+🏢 <b>CRISIL - All Our Thinking</b>
+🔗 <a href="https://www.crisil.com/en/home/what-we-think/all-our-thinking.html">Website</a>
+<b>New reports:</b> 0
+<i>No new reports for now. Stay tuned ✌️</i>
+
+🏢 <b>Cushman &amp; Wakefield India Insights</b>
+🔗 <a href="https://www.cushmanwakefield.com/en/india/insights">Website</a>
+<b>New reports:</b> 0
+<i>No new reports for now. Stay tuned ✌️</i>
+
+🏢 <b>TKC Perspective</b>
+🔗 <a href="https://tkc.in/feed/">Website</a>
+<b>New reports:</b> 0
+<i>No new reports for now. Stay tuned ✌️</i>
+
+🏢 <b>Anarock Research Reports</b>
+🔗 <a href="https://www.anarock.com/research/research-reports">Website</a>
+⚠️ <b>Failed to fetch report.</b> Please check the tracker log.
+
+🏢 <b>SIAM Press Releases</b>
+🔗 <a href="https://www.siam.in/news-&amp;-updates/press-releases">Website</a>
+<b>New reports:</b> 0
+<i>No new reports for now. Stay tuned ✌️</i>
+
+🏢 <b>FADA Press Releases</b>
+🔗 <a href="https://fada.in/press-release-list.php">Website</a>
+<b>New reports:</b> 0
+<i>No new reports for now. Stay tuned ✌️</i>
+—
+<i>Daily tracker report</i>
+

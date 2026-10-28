@@ -47,9 +47,11 @@ https://counterpointresearch.com/en/insights/india-smartphone-market-slumps-20-y
 https://counterpointresearch.com/en/insights/india-smartphone-market-volume-to-decline-12-percent-yoy-in-festive-season
 https://counterpointresearch.com/en/insights/india-smartphone-price-hikes-average-16-percent-in-h1-2026
 https://counterpointresearch.com/en/insights/india-smartphone-weekly-sales-decline-for-three-consecutive-weeks
+https://counterpointresearch.com/en/insights/india-xr-landscape
 https://counterpointresearch.com/en/insights/indias-4g-smartphone-shipments-to-grow-3-percent-in-amid-market-slump
 https://counterpointresearch.com/en/insights/indias-cctv-market-to-expand-24x-by-fy29-at-34-percent-cagr
 https://counterpointresearch.com/en/insights/indias-festive-season-sets-the-stage-for-lenovo-yoga-slim-7x-snapdragon-x2-plus
+https://counterpointresearch.com/en/insights/indias-xr-market-to-reach-inr-43-6-billion-by-2030-as-enterprise-adoption-accelerates
 https://counterpointresearch.com/en/insights/invidia-dominates-with-92-percent-share-in-counterpoint-researchs-sovereign-ai-llm-index
 https://counterpointresearch.com/en/insights/iphone-18-pro-series-sales-up-12-percent-yoy-in-launch-week-in-china-as-apple-takes-hashtag-1-spot
 https://counterpointresearch.com/en/insights/iridium-skylo-emerge-as-pacesetters-in-satellite-iot-connectivity-rankings
@@ -85,6 +87,7 @@ https://counterpointresearch.com/en/insights/server-led-essds-hit-48-percent-of-
 https://counterpointresearch.com/en/insights/survey-global-smartphone-buyers-feel-price-pressure
 https://counterpointresearch.com/en/insights/synaptics-and-google-research-push-edge-ai-forward-with-open-hardware-and
 https://counterpointresearch.com/en/insights/tenstorrent-at-the-open-frontier
+https://counterpointresearch.com/en/insights/test-driving-nvidias-l2-hyperion-av-stack
 https://counterpointresearch.com/en/insights/the-new-entrants-reshaping-indias-affordable-smartphone-market
 https://counterpointresearch.com/en/insights/the-next-era-of-ai-from-personal-ai-to-physical-ai-counterpoint-china-seminar
 https://counterpointresearch.com/en/insights/the-race-towards-smarter-hearing-aids
