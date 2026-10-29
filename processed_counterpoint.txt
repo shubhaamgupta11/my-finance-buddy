@@ -15,6 +15,7 @@ https://counterpointresearch.com/en/insights/chipflation-apples-iphone-18-choice
 https://counterpointresearch.com/en/insights/cii-seminar-on-hearables-and-wearables-2026
 https://counterpointresearch.com/en/insights/cisco-nvidia-launch-ultra-dense-small-form-factor-pluggable-usfp
 https://counterpointresearch.com/en/insights/component-cost-shock-could-wipe-out-more-than-230-million-sub-dollar-200-smartphone-shipemts
+https://counterpointresearch.com/en/insights/counterpoint-conversations-data-centres-smartphones-qualcomm-hbc-memory-wall
 https://counterpointresearch.com/en/insights/counterpoint-conversations-qualcomm-explains-dual-flagship-strategy-ai-gaming-smarter-cameras
 https://counterpointresearch.com/en/insights/counterpoint-conversations-qualcomm-personal-ai-earbud-snapdragon-sound-elite-gen-2
 https://counterpointresearch.com/en/insights/decoding-the-memory-landscape-intels-integration-play-nand-supply-crunches-and-the-2028-horizon
@@ -56,6 +57,7 @@ https://counterpointresearch.com/en/insights/invidia-dominates-with-92-percent-s
 https://counterpointresearch.com/en/insights/iphone-18-pro-series-sales-up-12-percent-yoy-in-launch-week-in-china-as-apple-takes-hashtag-1-spot
 https://counterpointresearch.com/en/insights/iridium-skylo-emerge-as-pacesetters-in-satellite-iot-connectivity-rankings
 https://counterpointresearch.com/en/insights/lightmatter-links-with-odms-to-pave-a-glide-path-for-cpo-co-packaged-optics
+https://counterpointresearch.com/en/insights/marvell-rumoured-to-be-acquiring-lumentum
 https://counterpointresearch.com/en/insights/mediatek-dimensity-9600-pro
 https://counterpointresearch.com/en/insights/meet-counterpoint-at-imc
 https://counterpointresearch.com/en/insights/meet-counterpoint-research-at-apples-surprise-and-shine-event
@@ -78,6 +80,7 @@ https://counterpointresearch.com/en/insights/nvidia-gtc-berlin
 https://counterpointresearch.com/en/insights/nvidia-leads-humanoid-robot-ai-accelerator-market
 https://counterpointresearch.com/en/insights/ocp-key-takeaways-ai-compute-connectivity
 https://counterpointresearch.com/en/insights/oled-gains-momentum-as-notebook-display-market-shifts-toward-premium
+https://counterpointresearch.com/en/insights/physical-ai
 https://counterpointresearch.com/en/insights/physical-intelligence-how-uses-rain-rfid-to-make-the-world-ai-ready
 https://counterpointresearch.com/en/insights/qualcomm-snapdragon-8-elite-gen-6
 https://counterpointresearch.com/en/insights/samsung-galaxy-z8-series-starts-strong-fold8
