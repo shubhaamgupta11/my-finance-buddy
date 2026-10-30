@@ -18,6 +18,7 @@ https://counterpointresearch.com/en/insights/component-cost-shock-could-wipe-out
 https://counterpointresearch.com/en/insights/counterpoint-conversations-data-centres-smartphones-qualcomm-hbc-memory-wall
 https://counterpointresearch.com/en/insights/counterpoint-conversations-qualcomm-explains-dual-flagship-strategy-ai-gaming-smarter-cameras
 https://counterpointresearch.com/en/insights/counterpoint-conversations-qualcomm-personal-ai-earbud-snapdragon-sound-elite-gen-2
+https://counterpointresearch.com/en/insights/counterpoint-conversations-snapdragon-x-series-ai-pcs-agentic-ai-googlebook-linux
 https://counterpointresearch.com/en/insights/decoding-the-memory-landscape-intels-integration-play-nand-supply-crunches-and-the-2028-horizon
 https://counterpointresearch.com/en/insights/dollar-trillion-bottleneck-tsmc-oip-2026-ai-design-kit-packaging-innovations-3d-dram-timeline
 https://counterpointresearch.com/en/insights/eliyan-serdes-microvcsels-copper-wall
@@ -59,6 +60,7 @@ https://counterpointresearch.com/en/insights/iridium-skylo-emerge-as-pacesetters
 https://counterpointresearch.com/en/insights/lightmatter-links-with-odms-to-pave-a-glide-path-for-cpo-co-packaged-optics
 https://counterpointresearch.com/en/insights/marvell-rumoured-to-be-acquiring-lumentum
 https://counterpointresearch.com/en/insights/mediatek-dimensity-9600-pro
+https://counterpointresearch.com/en/insights/meet-at-vultr-unveils-indias-largest-amd-ai-factory
 https://counterpointresearch.com/en/insights/meet-counterpoint-at-imc
 https://counterpointresearch.com/en/insights/meet-counterpoint-research-at-apples-surprise-and-shine-event
 https://counterpointresearch.com/en/insights/meet-counterpoint-research-at-fintech-japan-2026
@@ -67,6 +69,7 @@ https://counterpointresearch.com/en/insights/meet-counterpoint-research-at-iicie
 https://counterpointresearch.com/en/insights/meet-counterpoint-research-at-infocomm-india-2026
 https://counterpointresearch.com/en/insights/meet-counterpoint-research-at-leap-2026
 https://counterpointresearch.com/en/insights/meet-counterpoint-research-at-lenovo-global-industry-analyst-conference-2026
+https://counterpointresearch.com/en/insights/meet-counterpoint-research-at-mvno-nation-europe-2026
 https://counterpointresearch.com/en/insights/meet-counterpoint-research-at-nvidia-china-developer-day-2026
 https://counterpointresearch.com/en/insights/meet-counterpoint-research-at-semicon-india-2026
 https://counterpointresearch.com/en/insights/meet-counterpoint-research-at-snapdragon-summit-2026
@@ -87,6 +90,7 @@ https://counterpointresearch.com/en/insights/samsung-galaxy-z8-series-starts-str
 https://counterpointresearch.com/en/insights/sandisk-investor-day-caching-out-the-nand-cycle-with-contracts
 https://counterpointresearch.com/en/insights/sea-smartphone-shipments-fall-15-percent-yoy-steepest-since-q1-2023
 https://counterpointresearch.com/en/insights/server-led-essds-hit-48-percent-of-nand-shipments
+https://counterpointresearch.com/en/insights/smartphone-oems-shift-focus-to-profitability-as-soc-shipments-fall-21-percent-yoy
 https://counterpointresearch.com/en/insights/survey-global-smartphone-buyers-feel-price-pressure
 https://counterpointresearch.com/en/insights/synaptics-and-google-research-push-edge-ai-forward-with-open-hardware-and
 https://counterpointresearch.com/en/insights/tenstorrent-at-the-open-frontier
