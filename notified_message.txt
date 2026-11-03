@@ -8532,3 +8532,55 @@ Failed sources: Gartner Newsroom, Anarock Research Reports
 —
 <i>Daily tracker report</i>
 
+========================================================================
+Run: 2026-11-03 22:42:16 IST
+Sources: 8 | ok: 6 | failed: 2 | new reports: 5
+Failed sources: Gartner Newsroom, Anarock Research Reports
+========================================================================
+
+📊 <b>Blog &amp; Report Monitor</b>
+🕒 <i>Generated 2026-11-03 22:42 IST</i>
+
+🏢 <b>Counterpoint Research</b>
+🔗 <a href="https://counterpointresearch.com/en/insights">Website</a>
+<b>New reports:</b> 4
+1. <a href="https://counterpointresearch.com/en/insights/agibot-unveils-worken-productivity-framework-and-new-robot-platforms">AGIBOT Unveils Worken Productivity Framework and New Robot Platforms at Innovation Day 2026, Pushing Humanoid Robots Toward Commercial Scale</a>
+2. <a href="https://counterpointresearch.com/en/insights/global-smartphone-revenue-defies-shipment-slump-rising-3-yoy">Global Smartphone Revenue Defies Shipment Slump, Rising 3% YoY; Apple Records Highest-Ever Q3 Revenue</a>
+3. <a href="https://counterpointresearch.com/en/insights/marvell-buys-lumentum-to-climb-the-ai-laser-wall">Marvell Buys Lumentum to Climb the AI Laser Wall: What the $115 Billion Deal Means for Optics Value Chain</a>
+4. <a href="https://counterpointresearch.com/en/insights/apple-reports-its-fifth-consecutive-quarter-of-revenue-above-100-billion-sets">Apple Reports Its Fifth Consecutive Quarter of Revenue Above $100 Billion, Sets Third-Quarter Record</a>
+
+🏢 <b>Gartner Newsroom</b>
+🔗 <a href="https://www.gartner.com/en/newsroom/archive">Website</a>
+⚠️ <b>Failed to fetch report.</b> Please check the tracker log.
+
+🏢 <b>CRISIL - All Our Thinking</b>
+🔗 <a href="https://www.crisil.com/en/home/what-we-think/all-our-thinking.html">Website</a>
+<b>New reports:</b> 0
+<i>No new reports for now. Stay tuned ✌️</i>
+
+🏢 <b>Cushman &amp; Wakefield India Insights</b>
+🔗 <a href="https://www.cushmanwakefield.com/en/india/insights">Website</a>
+<b>New reports:</b> 0
+<i>No new reports for now. Stay tuned ✌️</i>
+
+🏢 <b>TKC Perspective</b>
+🔗 <a href="https://tkc.in/feed/">Website</a>
+<b>New reports:</b> 1
+1. <a href="https://tkc.in/sri-lanka-fashion-retail-growth-2026-brand-strategy/">Sri Lanka Fashion Retail Growth in 2026: Why Economic Recovery Has Not Yet Translated into Consumer Demand</a>
+
+🏢 <b>Anarock Research Reports</b>
+🔗 <a href="https://www.anarock.com/research/research-reports">Website</a>
+⚠️ <b>Failed to fetch report.</b> Please check the tracker log.
+
+🏢 <b>SIAM Press Releases</b>
+🔗 <a href="https://www.siam.in/news-&amp;-updates/press-releases">Website</a>
+<b>New reports:</b> 0
+<i>No new reports for now. Stay tuned ✌️</i>
+
+🏢 <b>FADA Press Releases</b>
+🔗 <a href="https://fada.in/press-release-list.php">Website</a>
+<b>New reports:</b> 0
+<i>No new reports for now. Stay tuned ✌️</i>
+—
+<i>Daily tracker report</i>
+

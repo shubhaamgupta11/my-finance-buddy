@@ -1,9 +1,11 @@
 https://counterpointresearch.com/en/insights/56-of-sovereign-ai-llms-are-adapted-models-with-metas-llama-the-dominant-base
 https://counterpointresearch.com/en/insights/5g-a-underpins-the-intelligent-evolution-of-humanoid-robots-by-providing-network-level-support
 https://counterpointresearch.com/en/insights/africa-tech-festival-2026
+https://counterpointresearch.com/en/insights/agibot-unveils-worken-productivity-framework-and-new-robot-platforms
 https://counterpointresearch.com/en/insights/alexa-in-india-amazon-bets-on-rising-smart-home-device-adoption
 https://counterpointresearch.com/en/insights/amdocs-motive-and-ericsson-lead-entitlement-server-core-rankings-in-2026
 https://counterpointresearch.com/en/insights/apple-iphone-18-pro-series-off-to-a-mixed-start-recording-sales-growth-three-weeks-after-launched
+https://counterpointresearch.com/en/insights/apple-reports-its-fifth-consecutive-quarter-of-revenue-above-100-billion-sets
 https://counterpointresearch.com/en/insights/apple-surprises-with-iphone-duo-pricing-extending-its-premium-tier-above-rest-of-lineup
 https://counterpointresearch.com/en/insights/apples-1999-iphone-duo-puts-the-companys-status-symbol-power-to-the-test
 https://counterpointresearch.com/en/insights/beyond-connectivity-how-entitlement-servers-are-redefining-mobile-growth-webinar
@@ -38,6 +40,7 @@ https://counterpointresearch.com/en/insights/global-foundry-20-revenue-rises-25-
 https://counterpointresearch.com/en/insights/global-pc-shipments-plunge-21-percent-in-q3-2026
 https://counterpointresearch.com/en/insights/global-quadruped-robot-shipments-hit-35000-units-in-growing-industry-demand
 https://counterpointresearch.com/en/insights/global-smartphone-market-to-fall-14-percent-in-2026-as-samsung-to-retake-number-1-position
+https://counterpointresearch.com/en/insights/global-smartphone-revenue-defies-shipment-slump-rising-3-yoy
 https://counterpointresearch.com/en/insights/global-smartwatch-shipments-fall-4-percent-in-q2-2026-huawei-reaches-its-record-share
 https://counterpointresearch.com/en/insights/global-tv-shipments-flat-in-q2-2026-while-oled-grows-20-percent
 https://counterpointresearch.com/en/insights/global-tv-shipments-market-webinar
@@ -58,6 +61,7 @@ https://counterpointresearch.com/en/insights/invidia-dominates-with-92-percent-s
 https://counterpointresearch.com/en/insights/iphone-18-pro-series-sales-up-12-percent-yoy-in-launch-week-in-china-as-apple-takes-hashtag-1-spot
 https://counterpointresearch.com/en/insights/iridium-skylo-emerge-as-pacesetters-in-satellite-iot-connectivity-rankings
 https://counterpointresearch.com/en/insights/lightmatter-links-with-odms-to-pave-a-glide-path-for-cpo-co-packaged-optics
+https://counterpointresearch.com/en/insights/marvell-buys-lumentum-to-climb-the-ai-laser-wall
 https://counterpointresearch.com/en/insights/marvell-rumoured-to-be-acquiring-lumentum
 https://counterpointresearch.com/en/insights/mediatek-dimensity-9600-pro
 https://counterpointresearch.com/en/insights/meet-at-vultr-unveils-indias-largest-amd-ai-factory
