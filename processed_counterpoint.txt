@@ -40,6 +40,7 @@ https://counterpointresearch.com/en/insights/five-infrastructure-trends-to-watch
 https://counterpointresearch.com/en/insights/from-amplification-to-edge-intelligence
 https://counterpointresearch.com/en/insights/from-broadband-speed-to-whole-home-experience
 https://counterpointresearch.com/en/insights/from-smartphone-to-ai-xiaomis-shift-toward-a-multi-domain-ai-chip-ecosystem
+https://counterpointresearch.com/en/insights/gen-8-7-oled-manufacturing-offers-39-percent-cost-advantage-over-gen-6
 https://counterpointresearch.com/en/insights/global-ai-glasses-shipments-surge-263-percent-yoy-with-display-less-ai-glasses
 https://counterpointresearch.com/en/insights/global-cellular-iot-module-shipments-rise-11-yoy-in-4g-cat-1-bis-exceeds-half
 https://counterpointresearch.com/en/insights/global-existing-smartphone-prices-climb-about-15-percent-in-2026
@@ -95,6 +96,7 @@ https://counterpointresearch.com/en/insights/memory-shortage-drives-downturn-in-
 https://counterpointresearch.com/en/insights/mobile-memory-cost-hikes
 https://counterpointresearch.com/en/insights/mrsi-34th-annual-market-research-seminar
 https://counterpointresearch.com/en/insights/ms-hwang-joins-cnbc-inside-sk-hynix-dollar-720-billion-ai-memory-buildout
+https://counterpointresearch.com/en/insights/nearly-half-of-in-store-retail-devices-to-ship-with-edge-ai-by-2032
 https://counterpointresearch.com/en/insights/new-speeds-new-technologies-new-ways-to-market
 https://counterpointresearch.com/en/insights/nvidia-gtc-berlin
 https://counterpointresearch.com/en/insights/nvidia-leads-humanoid-robot-ai-accelerator-market
@@ -102,6 +104,7 @@ https://counterpointresearch.com/en/insights/ocp-key-takeaways-ai-compute-connec
 https://counterpointresearch.com/en/insights/oled-gains-momentum-as-notebook-display-market-shifts-toward-premium
 https://counterpointresearch.com/en/insights/physical-ai
 https://counterpointresearch.com/en/insights/physical-intelligence-how-uses-rain-rfid-to-make-the-world-ai-ready
+https://counterpointresearch.com/en/insights/premium-flagship-smartphones-to-get-over-30-percent-costlier
 https://counterpointresearch.com/en/insights/qualcomm-snapdragon-8-elite-gen-6
 https://counterpointresearch.com/en/insights/samsung-galaxy-z8-series-starts-strong-fold8
 https://counterpointresearch.com/en/insights/samsung-google-finally-enter-ai-glasses-prioritizing-focused-launch-over-scale
@@ -120,5 +123,6 @@ https://counterpointresearch.com/en/insights/the-next-era-of-ai-from-personal-ai
 https://counterpointresearch.com/en/insights/the-race-towards-smarter-hearing-aids
 https://counterpointresearch.com/en/insights/the-trillion-dollars-bottleneck-inside-qualcomms-high-bandwidth-compute-bet-blog
 https://counterpointresearch.com/en/insights/the-us-says-chinas-ai-progress-is-down-to-distillation-but-is-it-that-clear-cut-cnbc
+https://counterpointresearch.com/en/insights/us-smartphone-market-share
 https://counterpointresearch.com/en/insights/xiaomi-mijia-smart-air-purifier-6-review-clean-air-you-can-measure-not-just-filter
 https://counterpointresearch.com/en/insights/ymtc-files-for-landmark-ipo-after-climbing-to-no-3-in-global-nand-race-with-dram-next

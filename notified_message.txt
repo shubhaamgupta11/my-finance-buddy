@@ -10112,3 +10112,56 @@ Failed sources: Gartner Newsroom, Anarock Research Reports
 —
 <i>Daily tracker report</i>
 
+========================================================================
+Run: 2026-11-19 23:56:41 IST
+Sources: 8 | ok: 7 | failed: 1 | new reports: 5
+Failed sources: Gartner Newsroom
+========================================================================
+
+📊 <b>Blog &amp; Report Monitor</b>
+🕒 <i>Generated 2026-11-19 23:56 IST</i>
+
+🏢 <b>Counterpoint Research</b>
+🔗 <a href="https://counterpointresearch.com/en/insights">Website</a>
+<b>New reports:</b> 4
+1. <a href="https://counterpointresearch.com/en/insights/premium-flagship-smartphones-to-get-over-30-percent-costlier">Premium Flagship Smartphones to Get Over 30% Costlier: What Will Consumers Expect from ₹1 Lakh+ Smartphones in 2027?</a>
+2. <a href="https://counterpointresearch.com/en/insights/gen-8-7-oled-manufacturing-offers-39-percent-cost-advantage-over-gen-6">Gen 8.7 OLED Manufacturing Offers ~39% Cost Advantage Over Gen 6 for 11.1” iPad Pro</a>
+3. <a href="https://counterpointresearch.com/en/insights/us-smartphone-market-share">US Smartphone Market Share: Quarterly</a>
+4. <a href="https://counterpointresearch.com/en/insights/nearly-half-of-in-store-retail-devices-to-ship-with-edge-ai-by-2032">Nearly Half of In-Store Retail Devices to Ship with Edge AI by 2032 as Edge AI Revenue in Retail Surges 6x</a>
+
+🏢 <b>Gartner Newsroom</b>
+🔗 <a href="https://www.gartner.com/en/newsroom/archive">Website</a>
+⚠️ <b>Failed to fetch report.</b> Please check the tracker log.
+
+🏢 <b>CRISIL - All Our Thinking</b>
+🔗 <a href="https://www.crisil.com/en/home/what-we-think/all-our-thinking.html">Website</a>
+<b>New reports:</b> 1
+1. <a href="https://www.crisil.com/content/integral-iq/en/homepage/what-we-think/all-our-thinking/reports/2026/11/unlocking-operational-alpha-transform-first-then-amplify-with-ai.html">Unlocking operational alpha Transform first, then  amplify with AI</a>
+
+🏢 <b>Cushman &amp; Wakefield India Insights</b>
+🔗 <a href="https://www.cushmanwakefield.com/en/india/insights">Website</a>
+<b>New reports:</b> 0
+<i>No new reports for now. Stay tuned ✌️</i>
+
+🏢 <b>TKC Perspective</b>
+🔗 <a href="https://tkc.in/feed/">Website</a>
+<b>New reports:</b> 0
+<i>No new reports for now. Stay tuned ✌️</i>
+
+🏢 <b>Anarock Research Reports</b>
+🔗 <a href="https://www.anarock.com/research/research-reports">Website</a>
+<b>New reports:</b> 0
+<i>No new reports for now. Stay tuned ✌️</i>
+
+🏢 <b>SIAM Press Releases</b>
+🔗 <a href="https://www.siam.in/news-&amp;-updates/press-releases">Website</a>
+<b>New reports:</b> 0
+<i>No new reports for now. Stay tuned ✌️</i>
+
+🏢 <b>FADA Press Releases</b>
+🔗 <a href="https://fada.in/press-release-list.php">Website</a>
+<b>New reports:</b> 0
+<i>No new reports for now. Stay tuned ✌️</i>
+—
+<i>Daily tracker report</i>
+
