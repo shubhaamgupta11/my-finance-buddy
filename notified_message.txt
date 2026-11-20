@@ -10214,3 +10214,56 @@ Failed sources: Gartner Newsroom, Anarock Research Reports
 —
 <i>Daily tracker report</i>
 
+========================================================================
+Run: 2026-11-20 23:25:27 IST
+Sources: 8 | ok: 6 | failed: 2 | new reports: 5
+Failed sources: Gartner Newsroom, Anarock Research Reports
+========================================================================
+
+📊 <b>Blog &amp; Report Monitor</b>
+🕒 <i>Generated 2026-11-20 23:25 IST</i>
+
+🏢 <b>Counterpoint Research</b>
+🔗 <a href="https://counterpointresearch.com/en/insights">Website</a>
+<b>New reports:</b> 5
+1. <a href="https://counterpointresearch.com/en/insights/china-smartphone-share">China Smartphone Market Share: Quarterly</a>
+2. <a href="https://counterpointresearch.com/en/insights/counterpoint-conversations-how-corning-gorilla-glass-is-making-smartphones-tougher-and-more-durable">Counterpoint Conversations: How Corning Gorilla Glass is Making Smartphones Tougher and More Durable</a>
+3. <a href="https://counterpointresearch.com/en/insights/meet-at-the-13th-mobility-india-conclave-excellence-awards-night">Meet Counterpoint Research at the 13th Mobility India Conclave &amp; Excellence Awards Night 2026</a>
+4. <a href="https://counterpointresearch.com/en/insights/indias-festive-smartphone-sales-plunge-22-percent-yoy-as-samsung-leads-a-sluggish-market">India’s Festive Smartphone Sales Plunge 22% YoY as Samsung Leads a Sluggish Market</a>
+5. <a href="https://counterpointresearch.com/en/insights/global-tv-market-share">Global TV Market Share: Quarterly</a>
+
+🏢 <b>Gartner Newsroom</b>
+🔗 <a href="https://www.gartner.com/en/newsroom/archive">Website</a>
+⚠️ <b>Failed to fetch report.</b> Please check the tracker log.
+
+🏢 <b>CRISIL - All Our Thinking</b>
+🔗 <a href="https://www.crisil.com/en/home/what-we-think/all-our-thinking.html">Website</a>
+<b>New reports:</b> 0
+<i>No new reports for now. Stay tuned ✌️</i>
+
+🏢 <b>Cushman &amp; Wakefield India Insights</b>
+🔗 <a href="https://www.cushmanwakefield.com/en/india/insights">Website</a>
+<b>New reports:</b> 0
+<i>No new reports for now. Stay tuned ✌️</i>
+
+🏢 <b>TKC Perspective</b>
+🔗 <a href="https://tkc.in/feed/">Website</a>
+<b>New reports:</b> 0
+<i>No new reports for now. Stay tuned ✌️</i>
+
+🏢 <b>Anarock Research Reports</b>
+🔗 <a href="https://www.anarock.com/research/research-reports">Website</a>
+⚠️ <b>Failed to fetch report.</b> Please check the tracker log.
+
+🏢 <b>SIAM Press Releases</b>
+🔗 <a href="https://www.siam.in/news-&amp;-updates/press-releases">Website</a>
+<b>New reports:</b> 0
+<i>No new reports for now. Stay tuned ✌️</i>
+
+🏢 <b>FADA Press Releases</b>
+🔗 <a href="https://fada.in/press-release-list.php">Website</a>
+<b>New reports:</b> 0
+<i>No new reports for now. Stay tuned ✌️</i>
+—
+<i>Daily tracker report</i>
+
